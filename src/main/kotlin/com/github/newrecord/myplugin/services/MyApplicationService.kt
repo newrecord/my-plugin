@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.newrecord.myplugin.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.newrecord.myplugin.MyBundle
 
 class MyApplicationService {
 
