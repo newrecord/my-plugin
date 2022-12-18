@@ -1,10 +1,18 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.newrecord.myplugin</id>
-    <name>IntelliJ Platform Plugin my-plugin</name>
-    <vendor>newrecord</vendor>
+    <name>Swap shared module</name>
+    <vendor email="newrecord@naver.com">Newrecord</vendor>
+    <version>0.1</version>
+
+    <description><![CDATA[
+    Shared module을 submodule로 swap하는 plugin.
+    기타 부가 설명 필요...
+    ]]>
+    </description>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.android</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.newrecord.myplugin.services.MyApplicationService"/>
@@ -15,4 +23,9 @@
         <listener class="com.github.newrecord.myplugin.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+    <actions>
+        <action id="SharedModule.com.github.newrecord.myplugin.actions.SwapSharedModuleAction" class="com.github.newrecord.myplugin.actions.SwapSharedModuleAction" text="Connect Action">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
 </idea-plugin>
